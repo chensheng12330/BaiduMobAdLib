@@ -12,22 +12,21 @@
 #import "SHAdDataSetting.h"
 #import "BaiduMobAdDelegateProtocol.h"
 
-
 #define kAdViewPortraitRect CGRectMake(0, 0, 320, kBaiduAdViewSizeDefaultHeight)
-
-#define SHADHlepAPPKEY (@"1003d326")
 
 @interface SHAdHelp : BaiduMobAdView<BaiduMobAdViewDelegate>
 
 @property (nonatomic, retain) NSDictionary *userInfo;
-
+@property (nonatomic, copy) NSString *appID;
 
 /*
  @see 初使化视图，广告会覆盖SHAdHelp View.
  视国底部颜色可进行设置，返回值UIView为 SHAdHelp对象。
  如需要要广告对象可从 baiduMobAd属性中获取
 */
--(id) initBaiduAdType:(BaiduMobAdViewType) adType withFrame:(CGRect) frame;
+
+//<BaiduMobAdViewDelegate>
+-(id) initBaiduAdType:(BaiduMobAdViewType) adType withFrame:(CGRect) frame delegate:(id) delegate;
 
 
 @end

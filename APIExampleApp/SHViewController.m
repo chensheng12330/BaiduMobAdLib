@@ -28,7 +28,9 @@
 {
     [super viewDidLoad];
     
-    SHAdHelp *shAdhelp = [[SHAdHelp alloc] initBaiduAdType:0 withFrame:kAdViewPortraitRect];
+    SHAdHelp *shAdhelp = [[SHAdHelp alloc] initBaiduAdType:0 withFrame:kAdViewPortraitRect delegate:self];
+    
+    [shAdhelp start];
     
     [self.view addSubview:shAdhelp];
     // Do any additional setup after loading the view from its nib.
@@ -38,6 +40,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) AdInfo:(id) adObj Event:(ADEvent) event
+{
+    NSLog(@"Event: %d",event);
 }
 
 @end

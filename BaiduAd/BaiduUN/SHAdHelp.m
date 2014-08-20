@@ -11,6 +11,10 @@
 @interface SHAdHelp ()
 
 @property (nonatomic, retain) NSArray *gobleAry;
+
+@property (nonatomic, assign) id extDelegate;
+
+@property (nonatomic, assign) SEL delegSel;
 @end
 
 @implementation SHAdHelp
@@ -20,7 +24,7 @@
     [super dealloc];
 }
 
--(id) initBaiduAdType:(BaiduMobAdViewType) adType withFrame:(CGRect) frame
+-(id) initBaiduAdType:(BaiduMobAdViewType) adType withFrame:(CGRect) frame delegate:(id<BaiduMobAdViewDelegate>) tdelegate
 {
     self = [super init];
     if (self) {
@@ -30,6 +34,10 @@
         self.AdType = adType;
         self.frame  = frame;
         self.delegate= self;
+        
+        self.extDelegate = tdelegate;
+        
+        self.delegSel = @selector(AdInfo:Event:);
     }
     return self;
 }
@@ -38,13 +46,13 @@
 #pragma mark - BaiduAd Delegate
 - (NSString *)publisherId
 {
-    return  SHADHlepAPPKEY; //@"your_own_app_id";
+    return  self.appID==NULL?@"1003d326":self.appID; //@"your_own_app_id";
 }
 
 - (NSString*) appSpec
 {
     //注意：该计费名为测试用途，不会产生计费，请测试广告展示无误以后，替换为您的应用计费名，然后提交AppStore.
-    return SHADHlepAPPKEY;
+    return  self.appID==NULL?@"1003d326":self.appID;
 }
 
 -(BOOL) enableLocation
@@ -58,6 +66,9 @@
 {
     //在广告即将展示时，产生一个动画，把广告条加载到视图中
     adview.hidden = NO;
+    
+    //动画效果
+    
     CGRect f = adview.frame;
     f.origin.x = -320;
     adview.frame = f;
@@ -65,13 +76,23 @@
     f.origin.x = 0;
     adview.frame = f;
     [UIView commitAnimations];
-    NSLog(@"delegate: will display ad");
+    //NSLog(@"delegate: will display ad");
+    
+    
+    if ([self.extDelegate respondsToSelector:self.delegSel]) {
+        [self.extDelegate AdInfo:self Event:AD_WillShow];
+    }
+    
 }
 
 -(void) failedDisplayAd:(BaiduMobFailReason) reason;
 {
     NSLog(@"delegate: failedDisplayAd %d", reason);
     //加载失败处理
+    
+    if ([self.extDelegate respondsToSelector:self.delegSel]) {
+        [self.extDelegate AdInfo:self Event:AD_LoadFaile];
+    }
 }
 
 /**
@@ -79,7 +100,9 @@
  */
 -(void) didAdImpressed
 {
-    
+    if ([self.extDelegate respondsToSelector:self.delegSel]) {
+        [self.extDelegate AdInfo:self Event:AD_LoadOK];
+    }
 }
 
 /**
@@ -88,6 +111,9 @@
 -(void) didAdClicked
 {
     //用户点击广告处理
+    if ([self.extDelegate respondsToSelector:self.delegSel]) {
+        [self.extDelegate AdInfo:self Event:AD_ClickAd];
+    }
 }
 
 /**
@@ -96,8 +122,10 @@
 -(void) didDismissLandingPage
 {
     //用户关闭广告处理
+    if ([self.extDelegate respondsToSelector:self.delegSel]) {
+        [self.extDelegate AdInfo:self Event:AD_CloseAd];
+    }
 }
-
 
 //人群属性接口
 /**
