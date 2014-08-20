@@ -8,11 +8,9 @@
 
 #import "SHAdHelp.h"
 
-
-
-
 @interface SHAdHelp ()
 
+@property (nonatomic, retain) NSArray *gobleAry;
 @end
 
 @implementation SHAdHelp
@@ -27,11 +25,11 @@
     self = [super init];
     if (self) {
         
+        self.gobleAry = @[@"购物",@"游戏",@"美女",@"淘宝",@"网购",@"app",@"iphone",@"运动",@"户外",@"体育",@"羽毛球",@"网球",@"蓝球"];
+        
         self.AdType = adType;
         self.frame  = frame;
         self.delegate= self;
-        
-        NSLog(@"initBaiduAdType");
     }
     return self;
 }
@@ -40,14 +38,12 @@
 #pragma mark - BaiduAd Delegate
 - (NSString *)publisherId
 {
-    NSLog(@"publisherId: %@",SHADHlepAPPKEY);
     return  SHADHlepAPPKEY; //@"your_own_app_id";
 }
 
 - (NSString*) appSpec
 {
     //注意：该计费名为测试用途，不会产生计费，请测试广告展示无误以后，替换为您的应用计费名，然后提交AppStore.
-    NSLog(@"publisherId:%@",SHADHlepAPPKEY);
     return SHADHlepAPPKEY;
 }
 
@@ -75,6 +71,7 @@
 -(void) failedDisplayAd:(BaiduMobFailReason) reason;
 {
     NSLog(@"delegate: failedDisplayAd %d", reason);
+    //加载失败处理
 }
 
 /**
@@ -90,7 +87,7 @@
  */
 -(void) didAdClicked
 {
-    //用户点击处理
+    //用户点击广告处理
 }
 
 /**
@@ -98,7 +95,7 @@
  */
 -(void) didDismissLandingPage
 {
-    
+    //用户关闭广告处理
 }
 
 
@@ -107,29 +104,40 @@
  *  - 关键词数组
  */
 -(NSArray*) keywords{
-    NSArray* keywords = [NSArray arrayWithObjects:@"测试",@"关键词", nil];
-    return keywords;
+    
+    NSArray *tempAr = self.userInfo[SHAD_USER_keywords];
+    if (tempAr) {
+        return tempAr;
+    }
+    
+    return self.gobleAry;
 }
 
 /**
  *  - 用户性别
  */
 -(BaiduMobAdUserGender) userGender{
-    return BaiduMobAdMale;
+    return BaiduMobAdSexUnknown;
 }
 
 /**
  *  - 用户生日
  */
--(NSDate*) userBirthday{
-    NSDate* birthday = [NSDate dateWithTimeIntervalSince1970:0];
-    return birthday;
-}
+//-(NSDate*) userBirthday{
+//    NSDate* birthday = [NSDate dateWithTimeIntervalSince1970:0];
+//    return birthday;
+//}
 
 /**
  *  - 用户城市
  */
 -(NSString*) userCity{
+    
+    NSString *tempstr = self.userInfo[SHAD_USER_userCity];
+    if (tempstr) {
+        return tempstr;
+    }
+    
     return @"深圳";
 }
 
@@ -138,7 +146,13 @@
  *  - 用户邮编
  */
 -(NSString*) userPostalCode{
-    return @"435200";
+    
+    NSString *tempstr = self.userInfo[SHAD_USER_userPCode];
+    if (tempstr) {
+        return tempstr;
+    }
+    
+    return @"518031";
 }
 
 
@@ -146,7 +160,13 @@
  *  - 用户职业
  */
 -(NSString*) userWork{
-    return @"运动爱好者";
+    
+    NSString *tempstr = self.userInfo[SHAD_USER_userWork];
+    if (tempstr) {
+        return tempstr;
+    }
+    
+    return @"体育";
 }
 
 /**
@@ -156,7 +176,7 @@
  *  - 4表示本科，5表示硕士，6表示博士
  */
 -(NSInteger) userEducation{
-    return  5;
+    return  4;
 }
 
 /**
@@ -164,6 +184,12 @@
  *  - 收入输入数字,以元为单位
  */
 -(NSInteger) userSalary{
+    
+    NSNumber *tempNum = self.userInfo[SHAD_USER_userSalary];
+    if (tempNum) {
+        return [tempNum integerValue];
+    }
+    
     return 12000;
 }
 
@@ -171,17 +197,23 @@
  *  - 用户爱好
  */
 -(NSArray*) userHobbies{
-    NSArray* hobbies = [NSArray arrayWithObjects:@"运动",@"购物", @"羽毛球",nil];
-    return hobbies;
+    
+    NSArray *tempAr = self.userInfo[SHAD_USER_userHobbies];
+    if (tempAr) {
+        return tempAr;
+    }
+    
+    return self.gobleAry;
 }
 
 /**
  *  - 其他自定义字段
  */
+/*
 -(NSDictionary*) userOtherAttributes{
     NSMutableDictionary* other = [[[NSMutableDictionary alloc] init] autorelease];
     [other setValue:@"全民羽毛球" forKey:@"appInfo"];
     return other;
 }
-
+*/
 @end

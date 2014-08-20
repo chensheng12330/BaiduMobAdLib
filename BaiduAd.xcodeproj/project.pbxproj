@@ -17,7 +17,6 @@
 		5873B77B19A477A300F7B846 /* libBaiduMobAdSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5873B74A19A477A300F7B846 /* libBaiduMobAdSdk.a */; };
 		5873B77C19A477A300F7B846 /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = 5873B74C19A477A300F7B846 /* mongoose.c */; };
 		5873B77D19A477A300F7B846 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 5873B75019A477A300F7B846 /* OpenUDID.m */; };
-		5873B77E19A477A300F7B846 /* SHAdHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5873B75219A477A300F7B846 /* SHAdHelp.m */; };
 		5873B77F19A477A300F7B846 /* SHFullAdHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5873B75419A477A300F7B846 /* SHFullAdHelp.m */; };
 		5873B78019A477A300F7B846 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5873B75719A477A300F7B846 /* CDataScanner.m */; };
 		5873B78119A477A300F7B846 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5873B75A19A477A300F7B846 /* CFilteringJSONSerializer.m */; };
@@ -48,6 +47,18 @@
 		5873B7A619A4781C00F7B846 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5873B7A519A4781C00F7B846 /* SystemConfiguration.framework */; };
 		5873B7A819A4782200F7B846 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5873B7A719A4782200F7B846 /* CoreGraphics.framework */; };
 		5873B7AA19A4782B00F7B846 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5873B7A919A4782B00F7B846 /* CoreLocation.framework */; };
+		5873B7E919A4A0FB00F7B846 /* BaiduMobAdCommonConfig.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74419A477A300F7B846 /* BaiduMobAdCommonConfig.h */; };
+		5873B7EA19A4A0FB00F7B846 /* BaiduMobAdDelegateProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74519A477A300F7B846 /* BaiduMobAdDelegateProtocol.h */; };
+		5873B7EB19A4A0FB00F7B846 /* BaiduMobAdInterstitial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74619A477A300F7B846 /* BaiduMobAdInterstitial.h */; };
+		5873B7EC19A4A0FB00F7B846 /* BaiduMobAdInterstitialDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74719A477A300F7B846 /* BaiduMobAdInterstitialDelegate.h */; };
+		5873B7ED19A4A0FB00F7B846 /* baidumobadsdk.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74819A477A300F7B846 /* baidumobadsdk.bundle */; };
+		5873B7EE19A4A0FB00F7B846 /* BaiduMobAdView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74919A477A300F7B846 /* BaiduMobAdView.h */; };
+		5873B7EF19A4A0FB00F7B846 /* SHAdHelp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B75119A477A300F7B846 /* SHAdHelp.h */; };
+		5873B7F019A4A0FB00F7B846 /* SHFullAdHelp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B75319A477A300F7B846 /* SHFullAdHelp.h */; };
+		5873B84119A4A5EF00F7B846 /* SHAdHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5873B84019A4A5EF00F7B846 /* SHAdHelp.m */; };
+		5873B84219A4AAA300F7B846 /* mongoose.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74D19A477A300F7B846 /* mongoose.h */; };
+		5873B84319A4AAA300F7B846 /* OpenUDID.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B74F19A477A300F7B846 /* OpenUDID.h */; };
+		5873B84419A4AAA300F7B846 /* ZipArchive.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5873B77919A477A300F7B846 /* ZipArchive.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +78,17 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				5873B84219A4AAA300F7B846 /* mongoose.h in CopyFiles */,
+				5873B84319A4AAA300F7B846 /* OpenUDID.h in CopyFiles */,
+				5873B84419A4AAA300F7B846 /* ZipArchive.h in CopyFiles */,
+				5873B7E919A4A0FB00F7B846 /* BaiduMobAdCommonConfig.h in CopyFiles */,
+				5873B7EA19A4A0FB00F7B846 /* BaiduMobAdDelegateProtocol.h in CopyFiles */,
+				5873B7EB19A4A0FB00F7B846 /* BaiduMobAdInterstitial.h in CopyFiles */,
+				5873B7EC19A4A0FB00F7B846 /* BaiduMobAdInterstitialDelegate.h in CopyFiles */,
+				5873B7ED19A4A0FB00F7B846 /* baidumobadsdk.bundle in CopyFiles */,
+				5873B7EE19A4A0FB00F7B846 /* BaiduMobAdView.h in CopyFiles */,
+				5873B7EF19A4A0FB00F7B846 /* SHAdHelp.h in CopyFiles */,
+				5873B7F019A4A0FB00F7B846 /* SHFullAdHelp.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +116,6 @@
 		5873B74F19A477A300F7B846 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		5873B75019A477A300F7B846 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		5873B75119A477A300F7B846 /* SHAdHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAdHelp.h; sourceTree = "<group>"; };
-		5873B75219A477A300F7B846 /* SHAdHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAdHelp.m; sourceTree = "<group>"; };
 		5873B75319A477A300F7B846 /* SHFullAdHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHFullAdHelp.h; sourceTree = "<group>"; };
 		5873B75419A477A300F7B846 /* SHFullAdHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHFullAdHelp.m; sourceTree = "<group>"; };
 		5873B75619A477A300F7B846 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
@@ -143,6 +164,8 @@
 		5873B7A519A4781C00F7B846 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5873B7A719A4782200F7B846 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5873B7A919A4782B00F7B846 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5873B84019A4A5EF00F7B846 /* SHAdHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAdHelp.m; sourceTree = "<group>"; };
+		5873B84619A4B09500F7B846 /* SHAdDataSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAdDataSetting.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +297,8 @@
 				5873B74B19A477A300F7B846 /* Mongoose */,
 				5873B74E19A477A300F7B846 /* OpenUDID */,
 				5873B75119A477A300F7B846 /* SHAdHelp.h */,
-				5873B75219A477A300F7B846 /* SHAdHelp.m */,
+				5873B84619A4B09500F7B846 /* SHAdDataSetting.h */,
+				5873B84019A4A5EF00F7B846 /* SHAdHelp.m */,
 				5873B75319A477A300F7B846 /* SHFullAdHelp.h */,
 				5873B75419A477A300F7B846 /* SHFullAdHelp.m */,
 				5873B75519A477A300F7B846 /* TouchJSON */,
@@ -470,10 +494,10 @@
 				5873B78919A477A300F7B846 /* CJSONSerializer.m in Sources */,
 				5873B78519A477A300F7B846 /* CDataScanner_Extensions.m in Sources */,
 				5873B78719A477A300F7B846 /* CJSONDeserializer.m in Sources */,
+				5873B84119A4A5EF00F7B846 /* SHAdHelp.m in Sources */,
 				5873B78819A477A300F7B846 /* CJSONScanner.m in Sources */,
 				5873B78A19A477A300F7B846 /* ioapi.c in Sources */,
 				5873B78C19A477A300F7B846 /* unzip.c in Sources */,
-				5873B77E19A477A300F7B846 /* SHAdHelp.m in Sources */,
 				5873B78419A477A300F7B846 /* CJSONSerializedData.m in Sources */,
 				5873B78119A477A300F7B846 /* CFilteringJSONSerializer.m in Sources */,
 				5873B78E19A477A300F7B846 /* ZipArchive.mm in Sources */,
@@ -588,6 +612,11 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaiduAd/BaiduAd-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduAd/BaiduUN",
@@ -607,6 +636,11 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaiduAd/BaiduAd-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduAd/BaiduUN",
@@ -673,6 +707,7 @@
 				5873B73F19A4776A00F7B846 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5873B74019A4776A00F7B846 /* Build configuration list for PBXNativeTarget "BaiduAdTests" */ = {
 			isa = XCConfigurationList;
@@ -681,6 +716,7 @@
 				5873B74219A4776A00F7B846 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

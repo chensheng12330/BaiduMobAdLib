@@ -7,6 +7,7 @@
 //
 
 #import "SHViewController.h"
+#import "SHAdHelp.h"
 
 @interface SHViewController ()
 
@@ -26,6 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SHAdHelp *shAdhelp = [[SHAdHelp alloc] initBaiduAdType:0 withFrame:kAdViewPortraitRect];
+    
+    [self.view addSubview:shAdhelp];
     // Do any additional setup after loading the view from its nib.
 }
 

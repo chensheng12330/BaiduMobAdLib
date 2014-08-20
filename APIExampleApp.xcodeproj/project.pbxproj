@@ -20,6 +20,8 @@
 		5873B7D619A496B100F7B846 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5873B7D419A496B100F7B846 /* icon.png */; };
 		5873B7D719A496B100F7B846 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5873B7D519A496B100F7B846 /* icon@2x.png */; };
 		5873B7D919A4972F00F7B846 /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5873B7D819A4972F00F7B846 /* icon@3x.png */; };
+		5873B7E319A49CFF00F7B846 /* baidumobadsdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5873B7DF19A49CFF00F7B846 /* baidumobadsdk.bundle */; };
+		5873B7E819A49D3100F7B846 /* libBaiduAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5873B7CC19A4950E00F7B846 /* libBaiduAd.a */; };
 		767A3198162563440009E6DA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767A3197162563440009E6DA /* AudioToolbox.framework */; };
 		767A319A162563550009E6DA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767A3199162563550009E6DA /* CoreMotion.framework */; };
 		767A319C1625635C0009E6DA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 767A319B1625635C0009E6DA /* libz.dylib */; };
@@ -71,6 +73,14 @@
 		5873B7D419A496B100F7B846 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		5873B7D519A496B100F7B846 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		5873B7D819A4972F00F7B846 /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
+		5873B7DB19A49CFF00F7B846 /* BaiduMobAdCommonConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdCommonConfig.h; sourceTree = "<group>"; };
+		5873B7DC19A49CFF00F7B846 /* BaiduMobAdDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdDelegateProtocol.h; sourceTree = "<group>"; };
+		5873B7DD19A49CFF00F7B846 /* BaiduMobAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdInterstitial.h; sourceTree = "<group>"; };
+		5873B7DE19A49CFF00F7B846 /* BaiduMobAdInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdInterstitialDelegate.h; sourceTree = "<group>"; };
+		5873B7DF19A49CFF00F7B846 /* baidumobadsdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = baidumobadsdk.bundle; sourceTree = "<group>"; };
+		5873B7E019A49CFF00F7B846 /* BaiduMobAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdView.h; sourceTree = "<group>"; };
+		5873B7F119A4A17500F7B846 /* SHAdHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAdHelp.h; sourceTree = "<group>"; };
+		5873B7F219A4A17500F7B846 /* SHFullAdHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHFullAdHelp.h; sourceTree = "<group>"; };
 		767A3197162563440009E6DA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		767A3199162563550009E6DA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		767A319B1625635C0009E6DA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -96,6 +106,7 @@
 				F05ACC9116E98A790093CB85 /* QuartzCore.framework in Frameworks */,
 				F05ACC8E16E98A4D0093CB85 /* StoreKit.framework in Frameworks */,
 				767A319C1625635C0009E6DA /* libz.dylib in Frameworks */,
+				5873B7E819A49D3100F7B846 /* libBaiduAd.a in Frameworks */,
 				767A319A162563550009E6DA /* CoreMotion.framework in Frameworks */,
 				767A3198162563440009E6DA /* AudioToolbox.framework in Frameworks */,
 				F95EF63815DCE32200D3485C /* AVFoundation.framework in Frameworks */,
@@ -158,6 +169,7 @@
 		2255C2D71457AC8900A6115C /* APIExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				5873B7DA19A49CFF00F7B846 /* libBaiduAd */,
 				2255C2E01457AC8900A6115C /* BaiduMobAdAppDelegate.h */,
 				2255C2E11457AC8900A6115C /* BaiduMobAdAppDelegate.m */,
 				5873B7CF19A4953A00F7B846 /* SHViewController.h */,
@@ -189,6 +201,21 @@
 				5873B7CE19A4950E00F7B846 /* BaiduAdTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5873B7DA19A49CFF00F7B846 /* libBaiduAd */ = {
+			isa = PBXGroup;
+			children = (
+				5873B7DB19A49CFF00F7B846 /* BaiduMobAdCommonConfig.h */,
+				5873B7DC19A49CFF00F7B846 /* BaiduMobAdDelegateProtocol.h */,
+				5873B7DD19A49CFF00F7B846 /* BaiduMobAdInterstitial.h */,
+				5873B7DE19A49CFF00F7B846 /* BaiduMobAdInterstitialDelegate.h */,
+				5873B7DF19A49CFF00F7B846 /* baidumobadsdk.bundle */,
+				5873B7E019A49CFF00F7B846 /* BaiduMobAdView.h */,
+				5873B7F119A4A17500F7B846 /* SHAdHelp.h */,
+				5873B7F219A4A17500F7B846 /* SHFullAdHelp.h */,
+			);
+			path = libBaiduAd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5873B7E319A49CFF00F7B846 /* baidumobadsdk.bundle in Resources */,
 				2255C2DC1457AC8900A6115C /* InfoPlist.strings in Resources */,
 				5873B7D719A496B100F7B846 /* icon@2x.png in Resources */,
 				5873B7D919A4972F00F7B846 /* icon@3x.png in Resources */,

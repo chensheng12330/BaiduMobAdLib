@@ -39,7 +39,7 @@ typedef enum _BaiduMobAdViewType {
 } BaiduMobAdViewType;
 
 @interface BaiduMobAdView : UIView {
-    @public
+    @private
     id<BaiduMobAdViewDelegate> delegate_;
     
     UIColor* textColor_;

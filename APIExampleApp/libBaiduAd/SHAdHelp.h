@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 #import "BaiduMobAdView.h"
-#import "SHAdDataSetting.h"
 #import "BaiduMobAdDelegateProtocol.h"
 
 
@@ -18,9 +17,6 @@
 #define SHADHlepAPPKEY (@"1003d326")
 
 @interface SHAdHelp : BaiduMobAdView<BaiduMobAdViewDelegate>
-
-@property (nonatomic, retain) NSDictionary *userInfo;
-
 
 /*
  @see 初使化视图，广告会覆盖SHAdHelp View.
